@@ -2,25 +2,22 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import counterImage from "./assets/IMG_3471.JPG"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(43)
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <img src={counterImage} alt='カウンターのイメージ' width={200} />
+        <h1>カウンター</h1>
+        <p>現在の数: {count}</p>
+        <p>これは数を数えるものです</p>
+        <button onClick={increment}>増やす</button>
+        <button onClick={decrement}>減らす</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
